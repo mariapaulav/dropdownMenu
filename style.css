@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    outline: none;
+}
+
+body{
+    background: #004643;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.dropdown{
+    margin-right: 50px;
+}
+
+.dropdown:last-child{
+    margin-right: 0;
+}
+
+.dropdown button{
+    border:0;
+    background: #f9bc60;
+    color: #001e1d;
+    padding: 16px 28px;
+    width: 225px;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: 0.5s ease;
+    /* border-color: crimson pink orange blueviolet; */
+}
+
+.dropdown button:hover,
+.dropdown button.active{
+    background: #ed9e27;
+}
+
+.dropdown button .icon,
+.dropdown ul li a .icon{
+    display: flex;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.dropdown ul{
+    display: none;
+    width: 225px;
+    margin-top: 35px;
+    background: #96ccbd;
+    border-radius: 3px;
+    position: relative;
+}
+
+.dropdown ul li a{
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    height: 50px;
+    color:#fffffe;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.dropdown ul li a:hover{
+    background: #83b2a4;
+    color: #f9bc60;
+}
+
+.dropdown ul li:first-child a{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.dropdown ul li:last-child a{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.dropdown ul:before{
+    content:'';
+    position: absolute;
+    top: -30px;
+    /* centran */
+    left:50%;
+    transform: translateX(-50%); 
+    /*  */
+    border:15px solid;
+    border-color:transparent transparent  #96ccbd transparent;
+}
+
+.dropdown.dropdown_desktop_icon button .icon{
+    display: none;
+}
+
+.dropdown.dropdown_desktop ul li a{
+    justify-content: center;
+}
+
+
+.dropdown.dropdown_mobile button,
+.dropdown.dropdown_mobile ul{
+    width: 75px;
+}
+
+.dropdown.dropdown_mobile .text{
+    display: none;
+}
+
+
+.dropdown.dropdown_mobile ul li a{
+    padding: 16px 28px;
+}
+
+.dropdown.dropdown_mobile .icon{
+    margin: 0;
+    display: inline-block;
+}
+
+.dropdown button.active + ul{
+    display: block;
+}
+
+@media screen and (min-width: 600px) {
+    .dropdown.dropdown_mobile{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .dropdown.dropdown_desktop_icon{
+        display: none;
+    }
+}
